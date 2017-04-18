@@ -1,0 +1,261 @@
+extends layouts/default.pug
+
+block content
+  section#blog.container
+    .center
+      h2 Blogs
+      p.lead Pellentesque habitant morbi tristique senectus et netus et malesuada
+    .blog
+      .row
+        .col-md-8
+          .blog-item
+            .row
+              .col-xs-12.col-sm-2.text-center
+                .entry-meta
+                  span#publish_date 07 NOV
+                  span
+                    i.fa.fa-user
+                    |
+                    a(href='#') John Doe
+                  span
+                    i.fa.fa-comment
+                    |
+                    a(href='blog-item.html#comments') 2 Comments
+                  span
+                    i.fa.fa-heart
+                    |
+                    a(href='#') 56 Likes
+              .col-xs-12.col-sm-10.blog-content
+                a(href='#')
+                  img.img-responsive.img-blog(src='images/blog/blog1.jpg', width='100%', alt='')
+                h2
+                  a(href='blog-item.html') Consequat bibendum quam liquam viverra
+                h3
+                  | Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.
+                |
+                a.btn.btn-primary.readmore(href='blog-item.html')
+                  | Read More
+                  i.fa.fa-angle-right
+          .blog-item
+            .row
+              .col-sm-2.text-center
+                .entry-meta
+                  span#publish_date 07 NOV
+                  span
+                    i.fa.fa-user
+                    |
+                    a(href='#') John Doe
+                  span
+                    i.fa.fa-comment
+                    |
+                    a(href='blog-item.html#comments') 2 Comments
+                  span
+                    i.fa.fa-heart
+                    |
+                    a(href='#') 56 Likes
+              .col-sm-10.blog-content
+                a(href='')
+                  img.img-responsive.img-blog(src='images/blog/blog2.jpg', width='100%', alt='')
+                h2
+                  a(href='blog-item.html') Consequat bibendum quam liquam viverra
+                h3
+                  | Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.
+                |
+                a.btn.btn-primary.readmore(href='blog-item.html')
+                  | Read More
+                  i.fa.fa-angle-right
+          ul.pagination.pagination-lg
+            li
+              a(href='#')
+                i.fa.fa-long-arrow-left
+                | Previous Page
+            li.active
+              a(href='#') 1
+            li
+              a(href='#') 2
+            li
+              a(href='#') 3
+            li
+              a(href='#') 4
+            li
+              a(href='#') 5
+            li
+              a(href='#')
+                | Next Page
+                i.fa.fa-long-arrow-right
+        aside.col-md-4
+          .widget.search
+            form(role='form')
+              input.form-control.search_box(type='text', autocomplete='off', placeholder='Search Here')
+          .widget.categories
+            h3 Recent Comments
+            .row
+              .col-sm-12
+                .single_comments
+                  img(src='images/blog/avatar3.png', alt='')
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                  .entry-meta.small.muted
+                    span
+                      | By
+                      a(href='#') Alex
+                    | On
+                    a(href='#') Creative
+                .single_comments
+                  img(src='images/blog/avatar3.png', alt='')
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                  .entry-meta.small.muted
+                    span
+                      | By
+                      a(href='#') Alex
+                    | On
+                    a(href='#') Creative
+                .single_comments
+                  img(src='images/blog/avatar3.png', alt='')
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                  .entry-meta.small.muted
+                    span
+                      | By
+                      a(href='#') Alex
+                    | On
+                    a(href='#') Creative
+          .widget.categories
+            h3 Categories
+            .row
+              .col-sm-6
+                ul.blog_category
+                  li
+                    a(href='#')
+                      | Computers
+                      span.badge 04
+                  li
+                    a(href='#')
+                      | Smartphone
+                      span.badge 10
+                  li
+                    a(href='#')
+                      | Gedgets
+                      span.badge 06
+                  li
+                    a(href='#')
+                      | Technology
+                      span.badge 25
+          .widget.archieve
+            h3 Archieve
+            .row
+              .col-sm-12
+                ul.blog_archieve
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-double-right
+                      |  December 2015
+                      span.pull-right (97)
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-double-right
+                      |  November 2015
+                      span.pull-right (32)
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-double-right
+                      |  October 2015
+                      span.pull-right (19)
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-double-right
+                      |  September 2015
+                      span.pull-right (08)
+          .widget.tags
+            h3 Tag Cloud
+            ul.tag-cloud
+              li
+                a.btn.btn-xs.btn-primary(href='#') Apple
+              li
+                a.btn.btn-xs.btn-primary(href='#') Barcelona
+              li
+                a.btn.btn-xs.btn-primary(href='#') Office
+              li
+                a.btn.btn-xs.btn-primary(href='#') Ipod
+              li
+                a.btn.btn-xs.btn-primary(href='#') Stock
+              li
+                a.btn.btn-xs.btn-primary(href='#') Race
+              li
+                a.btn.btn-xs.btn-primary(href='#') London
+              li
+                a.btn.btn-xs.btn-primary(href='#') Football
+              li
+                a.btn.btn-xs.btn-primary(href='#') Porche
+              li
+                a.btn.btn-xs.btn-primary(href='#') Gadgets
+          .widget.blog_gallery
+            h3 Our Gallery
+            ul.sidebar-gallery
+              li
+                a(href='#')
+                  img(src='images/blog/gallery1.png', alt='')
+              li
+                a(href='#')
+                  img(src='images/blog/gallery2.png', alt='')
+              li
+                a(href='#')
+                  img(src='images/blog/gallery3.png', alt='')
+              li
+                a(href='#')
+                  img(src='images/blog/gallery4.png', alt='')
+              li
+                a(href='#')
+                  img(src='images/blog/gallery5.png', alt='')
+              li
+                a(href='#')
+                  img(src='images/blog/gallery6.png', alt='')
+  section#bottom
+    .container.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+      .row
+        .col-md-3.col-sm-6
+          .widget
+            h3 Company
+            ul
+              li
+                a(href='#') About us
+              li
+                a(href='#') We are hiring
+              li
+                a(href='#') Meet the team
+              li
+                a(href='#') Copyright
+        .col-md-3.col-sm-6
+          .widget
+            h3 Support
+            ul
+              li
+                a(href='#') Faq
+              li
+                a(href='#') Blog
+              li
+                a(href='#') Forum
+              li
+                a(href='#') Documentation
+        .col-md-3.col-sm-6
+          .widget
+            h3 Developers
+            ul
+              li
+                a(href='#') Web Development
+              li
+                a(href='#') SEO Marketing
+              li
+                a(href='#') Theme
+              li
+                a(href='#') Development
+        .col-md-3.col-sm-6
+          .widget
+            h3 Our Partners
+            ul
+              li
+                a(href='#') Adipisicing Elit
+              li
+                a(href='#') Eiusmod
+              li
+                a(href='#') Tempor
+              li
+                a(href='#') Veniam

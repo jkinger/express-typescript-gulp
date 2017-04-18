@@ -1,5 +1,305 @@
 extends layouts/default.pug
 
 block content
-  h1= title
-  h2= message
+  .slider
+    .container
+      #about-slider
+        #carousel-slider.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators.visible-xs
+            li.active(data-target='#carousel-slider', data-slide-to='0')
+            li(data-target='#carousel-slider', data-slide-to='1')
+            li(data-target='#carousel-slider', data-slide-to='2')
+          .carousel-inner
+            .item.active
+              img.img-responsive(src='images/slider_one.jpg', alt='')
+            .item
+              img.img-responsive(src='images/slider_one.jpg', alt='')
+            .item
+              img.img-responsive(src='images/slider_one.jpg', alt='')
+          a.left.carousel-control.hidden-xs(href='#carousel-slider', data-slide='prev')
+            i.fa.fa-angle-left
+          a.right.carousel-control.hidden-xs(href='#carousel-slider', data-slide='next')
+            i.fa.fa-angle-right
+  section#feature
+    .container
+      .center.wow.fadeInDown
+        h2 Features
+        p.lead
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          br
+          |  et dolore magna aliqua. Ut enim ad minim veniam
+      .row
+        .features
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-laptop
+              h2 Fresh and Clean
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-comments
+              h2 Retina ready
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-cloud-download
+              h2 Easy to customize
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-leaf
+              h2 Adipisicing elit
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-cogs
+              h2 Sed do eiusmod
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+          .col-md-4.col-sm-6.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+            .feature-wrap
+              i.fa.fa-heart
+              h2 Labore et dolore
+              h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  section#recent-works
+    .container
+      .center.wow.fadeInDown
+        h2 Recent Works
+        p.lead
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          br
+          |  et dolore magna aliqua. Ut enim ad minim veniam
+      .row
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item1.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item1.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item2.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item2.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item3.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item3.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item4.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') MultiPurpose theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item4.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item5.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item5.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item6.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item6.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item7.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item7.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+        .col-xs-12.col-sm-4.col-md-3
+          .recent-work-wrap
+            img.img-responsive(src='images/portfolio/recent/item8.png', alt='')
+            .overlay
+              .recent-work-inner
+                h3
+                  a(href='#') Business theme
+                p There are many variations of passages of Lorem Ipsum available, but the majority
+                a.preview(href='images/portfolio/full/item8.png', rel='prettyPhoto')
+                  i.fa.fa-eye
+                  |  View
+  section#middle
+    .container
+      .row
+        .col-sm-6.wow.fadeInDown
+          .skill
+            h2 Our Skills
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            .progress-wrap
+              h3 Graphic Design
+              .progress
+                .progress-bar.color1(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 85%')
+                  span.bar-width 85%
+            .progress-wrap
+              h3 HTML
+              .progress
+                .progress-bar.color2(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width: 95%')
+                  span.bar-width 95%
+            .progress-wrap
+              h3 CSS
+              .progress
+                .progress-bar.color3(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+                  span.bar-width 80%
+            .progress-wrap
+              h3 Wordpress
+              .progress
+                .progress-bar.color4(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
+                  span.bar-width 90%
+        .col-sm-6.wow.fadeInDown
+          .accordion
+            h2 Why People like us?
+            #accordion1.panel-group
+              .panel.panel-default
+                .panel-heading.active
+                  h3.panel-title
+                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseOne1')
+                      | Lorem ipsum dolor sit amet
+                      i.fa.fa-angle-right.pull-right
+                #collapseOne1.panel-collapse.collapse.in
+                  .panel-body
+                    .media.accordion-inner
+                      .pull-left
+                        img.img-responsive(src='images/accordion1.png')
+                      .media-body
+                        h4 Adipisicing elit
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              .panel.panel-default
+                .panel-heading
+                  h3.panel-title
+                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseTwo1')
+                      | Lorem ipsum dolor sit amet
+                      i.fa.fa-angle-right.pull-right
+                #collapseTwo1.panel-collapse.collapse
+                  .panel-body
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+              .panel.panel-default
+                .panel-heading
+                  h3.panel-title
+                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseThree1')
+                      | Lorem ipsum dolor sit amet
+                      i.fa.fa-angle-right.pull-right
+                #collapseThree1.panel-collapse.collapse
+                  .panel-body
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+              .panel.panel-default
+                .panel-heading
+                  h3.panel-title
+                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseFour1')
+                      | Lorem ipsum dolor sit amet
+                      i.fa.fa-angle-right.pull-right
+                #collapseFour1.panel-collapse.collapse
+                  .panel-body
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+  section#bottom
+    .container.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+      .row
+        .col-md-3.col-sm-6
+          .widget
+            h3 Company
+            ul
+              li
+                a(href='#') About us
+              li
+                a(href='#') We are hiring
+              li
+                a(href='#') Meet the team
+              li
+                a(href='#') Copyright
+        .col-md-3.col-sm-6
+          .widget
+            h3 Support
+            ul
+              li
+                a(href='#') Faq
+              li
+                a(href='#') Blog
+              li
+                a(href='#') Forum
+              li
+                a(href='#') Documentation
+        .col-md-3.col-sm-6
+          .widget
+            h3 Developers
+            ul
+              li
+                a(href='#') Web Development
+              li
+                a(href='#') SEO Marketing
+              li
+                a(href='#') Theme
+              li
+                a(href='#') Development
+        .col-md-3.col-sm-6
+          .widget
+            h3 Our Partners
+            ul
+              li
+                a(href='#') Adipisicing Elit
+              li
+                a(href='#') Eiusmod
+              li
+                a(href='#') Tempor
+              li
+                a(href='#') Veniam
+  .top-bar
+    .container
+      .row
+        .col-lg-12
+          .social
+            ul.social-share
+              li
+                a(href='#')
+                  i.fa.fa-facebook
+              li
+                a(href='#')
+                  i.fa.fa-twitter
+              li
+                a(href='#')
+                  i.fa.fa-linkedin
+              li
+                a(href='#')
+                  i.fa.fa-dribbble
+              li
+                a(href='#')
+                  i.fa.fa-skype

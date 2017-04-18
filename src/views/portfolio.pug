@@ -1,0 +1,162 @@
+extends layouts/default.pug
+
+block content
+  section#portfolio
+    .container
+      .center
+        h2 Portfolio
+        p.lead
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          br
+          |  et dolore magna aliqua. Ut enim ad minim veniam
+      ul.portfolio-filter.text-center
+        li
+          a.btn.btn-default.active(href='#', data-filter='*') All Works
+        li
+          a.btn.btn-default(href='#', data-filter='.bootstrap') Creative
+        li
+          a.btn.btn-default(href='#', data-filter='.html') Photography
+        li
+          a.btn.btn-default(href='#', data-filter='.wordpress') Web Development
+      .row
+        .portfolio-items
+          .portfolio-item.apps.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item1.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item1.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.joomla.bootstrap.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item2.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item2.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.bootstrap.wordpress.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item3.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item3.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.joomla.wordpress.apps.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item4.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item4.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.joomla.html.bootstrap.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item5.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item5.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.wordpress.html.apps.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item6.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item6.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.wordpress.html.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item7.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item7.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+          .portfolio-item.wordpress.html.bootstrap.col-xs-12.col-sm-4.col-md-3
+            .recent-work-wrap
+              img.img-responsive(src='images/portfolio/recent/item8.png', alt='')
+              .overlay
+                .recent-work-inner
+                  h3
+                    a(href='#') Business theme
+                  p There are many variations of passages of Lorem Ipsum available, but the majority
+                  a.preview(href='images/portfolio/full/item8.png', rel='prettyPhoto')
+                    i.fa.fa-eye
+                    |  View
+  section#bottom
+    .container.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
+      .row
+        .col-md-3.col-sm-6
+          .widget
+            h3 Company
+            ul
+              li
+                a(href='#') About us
+              li
+                a(href='#') We are hiring
+              li
+                a(href='#') Meet the team
+              li
+                a(href='#') Copyright
+        .col-md-3.col-sm-6
+          .widget
+            h3 Support
+            ul
+              li
+                a(href='#') Faq
+              li
+                a(href='#') Blog
+              li
+                a(href='#') Forum
+              li
+                a(href='#') Documentation
+        .col-md-3.col-sm-6
+          .widget
+            h3 Developers
+            ul
+              li
+                a(href='#') Web Development
+              li
+                a(href='#') SEO Marketing
+              li
+                a(href='#') Theme
+              li
+                a(href='#') Development
+        .col-md-3.col-sm-6
+          .widget
+            h3 Our Partners
+            ul
+              li
+                a(href='#') Adipisicing Elit
+              li
+                a(href='#') Eiusmod
+              li
+                a(href='#') Tempor
+              li
+                a(href='#') Veniam
+

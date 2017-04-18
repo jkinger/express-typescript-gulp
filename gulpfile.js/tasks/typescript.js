@@ -1,8 +1,8 @@
-var config      = require('../config')
-var gulp        = require('gulp')
-var gulpif      = require('gulp-if')
-var path        = require('path')
-var tsc         = require('gulp-typescript')
+var config      = require('../config');
+var gulp        = require('gulp');
+var gulpif      = require('gulp-if');
+var path        = require('path');
+var tsc         = require('gulp-typescript');
 var sourcemaps  = require('gulp-sourcemaps');
 
 var paths = {
@@ -10,7 +10,7 @@ var paths = {
     path.join(config.root.src, config.tasks.typescript.src, '/**/*.ts')
   ],
   dest: path.join(config.root.dest, config.tasks.typescript.dest)
-}
+};
 
 var tscTask = function() {
   return gulp.src(paths.src)
@@ -21,8 +21,8 @@ var tscTask = function() {
             outDir: paths.dest
         }
     ))
-    .pipe(gulp.dest(paths.dest))
-}
+    .pipe(gulp.dest(paths.dest));
+};
 
-gulp.task('typescript', tscTask)
-module.exports = tscTask
+gulp.task('typescript', tscTask);
+module.exports = tscTask;
