@@ -1,11 +1,11 @@
-import path from 'path';
-import express from 'express';
-import bodyParser from 'body-parser'; // Parse incoming request bodies
-import cookieParser from 'cookie-parser'; // Parse incoming request's cookies
-import logger from 'morgan'; // HTTP request logger middleware
-import compression from 'compression'; // Compress response bodies for all requests
-import errorHandler from 'errorhandler';
-import chalk from 'chalk';
+import * as path from 'path';
+import * as express from 'express';
+import * as bodyParser from 'body-parser'; // Parse incoming request bodies
+import * as cookieParser from 'cookie-parser'; // Parse incoming request's cookies
+import * as logger from 'morgan'; // HTTP request logger middleware
+import * as compression from 'compression'; // Compress response bodies for all requests
+import * as errorHandler from 'errorhandler';
+import * as chalk from 'chalk';
 
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '../..'));
@@ -43,6 +43,7 @@ function cacheControl(req, res, next) {
 // Serve static files with cache control headers
 app.use('/styles', cacheControl, express.static(path.join(__dirname, 'styles'), { maxAge: 30 }));
 app.use('/images', cacheControl, express.static(path.join(__dirname, 'images'), { maxAge: 30 }));
+app.use('/js', cacheControl, express.static(path.join(__dirname, 'js'), { maxAge: 30 }));
 // app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: false}));
 
 // Add routes

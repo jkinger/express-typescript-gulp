@@ -7,15 +7,14 @@ var tslint = require('gulp-tslint');
 
 var paths = {
   src: [
-    path.join(config.root.src, config.tasks.typescript.src, '/**/*.ts')
-  ],
-  dest: path.join(config.root.dest, config.tasks.typescript.dest)
+    path.join(config.root.src, config.tasks.server.src, '/**/*.ts')
+  ]
 };
 
 var tsLintTask = function () {
   gulp.src(paths.src)
     .pipe(tslint({
-      formatter: "prose"
+      formatter: 'prose'
     }))
     .pipe(tslint.report({
       emitError: false

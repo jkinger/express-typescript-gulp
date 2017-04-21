@@ -20,9 +20,26 @@
       "dest": "./"
     },
 
-    "typescript": {
+    "angular": {
+      "src": "app",
+      "dest": "js",
+      "entries": {
+        "polyfills": ["./polyfills.browser.ts"],
+        "app": ["./main.ts"]
+      },
+      "extensions": ["ts", "js", "json"]
+    },
+
+    "server": {
       "src": "",
       "dest": "./",
+      "exclude": [
+        "**/*.spec.ts",
+        "app/**/*"
+      ],
+      "compilerOptions": {
+        "noImplicitAny": false
+      },
       "extensions": ["ts"]
     },
 
