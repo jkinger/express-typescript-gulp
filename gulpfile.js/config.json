@@ -5,12 +5,6 @@
   },
 
   "tasks": {
-    "browserSync": {
-      "server": {
-        "baseDir": "dist"
-      }
-    },
-
     "nodemon": {
       "server": "server.js"
     },
@@ -20,11 +14,11 @@
       "dest": "./"
     },
 
-    "angular": {
+    "webpack": {
       "src": "app",
       "dest": "js",
       "entries": {
-        "polyfills": ["./polyfills.browser.ts"],
+        "vendor": ["./vendor.ts"],
         "app": ["./main.ts"]
       },
       "extensions": ["ts", "js", "json"]
@@ -57,7 +51,7 @@
       "extractSharedJs": false
     },
 
-    "css": {
+    "stylesheets": {
       "src": "styles",
       "dest": "styles",
       "autoprefixer": {

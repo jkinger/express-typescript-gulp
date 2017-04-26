@@ -24,15 +24,15 @@
       "outFiles": []
     },
     {
+      "type": "node",
+      "request": "launch",
       "name": "Gulp",
       "program": "${workspaceRoot}\\node_modules\\gulp\\bin\\gulp.js",
       "args": [
-        "angular"
+          "production"
       ],
       "cwd": "${workspaceRoot}",
-      "env": {
-
-      }
+      "env": {}
     }
   ]
 }

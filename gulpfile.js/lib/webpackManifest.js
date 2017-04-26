@@ -1,5 +1,6 @@
 var path = require('path');
 var fs   = require('fs');
+var pathToUrl = require('./pathToUrl');
 
 module.exports = function(publicPath, dest, filename) {
   filename = filename || 'rev-manifest.json';
@@ -10,9 +11,11 @@ module.exports = function(publicPath, dest, filename) {
       var chunks   = stats.assetsByChunkName;
       var manifest = {};
 
-      for (var key = 0; key<chunks.length; key++) {
-        var originalFilename = key + '.js';
-        manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key]);
+      for (var key in chunks) {
+        if (chunks.hasOwnProperty(key)) {
+          var originalFilename = key + '.js';
+          manifest[pathToUrl(publicPath, originalFilename)] = pathToUrl(publicPath, chunks[key]);
+        }
       }
 
       fs.writeFileSync(

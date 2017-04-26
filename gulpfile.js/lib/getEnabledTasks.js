@@ -3,14 +3,14 @@ var compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
 var assetTasks = ['fonts', 'images', 'svgSprite']; // removed 'iconFont'
-var codeTasks = ['html', 'css', 'js', 'angular', 'server'];
+var codeTasks = ['html', 'stylesheets', 'webpack', 'server'];
 
 module.exports = function(env) {
 
   function matchFilter(task) {
     if(config.tasks[task]) {
-      if(task === 'js') {
-        task = false; // env === 'production' ? 'webpack:production' : false
+      if(task === 'webpack') {
+        task = env === 'production' ? 'webpack:production' : 'webpack';
       }
       return task;
     }

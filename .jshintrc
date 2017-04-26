@@ -51,7 +51,7 @@
     "noyield": false,
     "browser": true,
     "node": true,
-    "esversion": 6,
+    "esversion": 5,
     "globals": {
         "angular": false,
         "$": false
