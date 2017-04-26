@@ -1,21 +1,21 @@
-var config = require('../config')
-var gulp   = require('gulp')
-var path   = require('path')
-var watch  = require('gulp-watch')
+var config = require('../config');
+var gulp   = require('gulp');
+var path   = require('path');
+var watch  = require('gulp-watch');
 
 var watchTask = function() {
-  var watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite','html', 'css', 'typescript']
+  var watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite','html', 'stylesheets', 'server'];
 
   watchableTasks.forEach(function(taskName) {
-    var task = config.tasks[taskName]
+    var task = config.tasks[taskName];
     if(task) {
-      var glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
+      var glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}');
       watch(glob, function() {
-       require('./' + taskName)()
-      })
+       require('./' + taskName)();
+      });
     }
-  })
-}
+  });
+};
 
-gulp.task('watch', ['nodemon'], watchTask) //['browserSync']
-module.exports = watchTask
+gulp.task('watch', ['nodemon'], watchTask);
+module.exports = watchTask;

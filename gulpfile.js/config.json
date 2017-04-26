@@ -5,12 +5,6 @@
   },
 
   "tasks": {
-    "browserSync": {
-      "server": {
-        "baseDir": "dist"
-      }
-    },
-
     "nodemon": {
       "server": "server.js"
     },
@@ -20,9 +14,26 @@
       "dest": "./"
     },
 
-    "typescript": {
+    "webpack": {
+      "src": "app",
+      "dest": "js",
+      "entries": {
+        "vendor": ["./vendor.ts"],
+        "app": ["./main.ts"]
+      },
+      "extensions": ["ts", "js", "json"]
+    },
+
+    "server": {
       "src": "",
       "dest": "./",
+      "exclude": [
+        "**/*.spec.ts",
+        "app/**/*"
+      ],
+      "compilerOptions": {
+        "noImplicitAny": false
+      },
       "extensions": ["ts"]
     },
 
@@ -40,7 +51,7 @@
       "extractSharedJs": false
     },
 
-    "css": {
+    "stylesheets": {
       "src": "styles",
       "dest": "styles",
       "autoprefixer": {

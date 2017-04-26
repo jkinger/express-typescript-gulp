@@ -6,7 +6,7 @@
     "isShellCommand": true,
     "tasks": [
         {
-            "taskName": "tslint",
+            "taskName": "lint",
             "args": [],
             "problemMatcher": "$tslint5"
         }
