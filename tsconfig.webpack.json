@@ -1,47 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "es2015",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "noEmit": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "strictNullChecks": false,
+    "target": "es5",
     "lib": [
+      "dom",
       "es2015",
-      "dom"
+      "es2015.promise"
     ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true
   },
   "include": [
-    "src/app/**/*"
+    "src/js/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/**/*.spec.ts",
-    "src/**/*.e2e.ts"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": true,
-    "useWebpackText": true
-  },
-  "angularCompilerOptions": {
-    "genDir": "./compiled",
-    "skipMetadataEmit": true
-  },
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+  "compileOnSave": false
 }

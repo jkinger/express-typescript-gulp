@@ -10,12 +10,14 @@
         "preproduction",
         "sizereport",
         "gulpif",
-        "webpackv",
         "devtool",
         "Dedupe",
         "recurse",
         "pathinfo",
-        "gutil"
+        "gutil",
+        "javascripts",
+        "linebreak",
+        "minifies"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.

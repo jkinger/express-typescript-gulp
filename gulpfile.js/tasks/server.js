@@ -1,13 +1,12 @@
-var config      = require('../config');
-var gulp        = require('gulp');
-var gulpif      = require('gulp-if');
-var path        = require('path');
-var tsc         = require('gulp-typescript');
-var sourcemaps  = require('gulp-sourcemaps');
+const config = require('../config');
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const path = require('path');
+const tsc = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
 
-var serverTask = function() {
-
-  var paths = {
+const serverTask = function serverTask() {
+  const paths = {
     src: [
       path.join(config.root.src, config.tasks.server.src, '/**/*.ts')
     ],
@@ -15,8 +14,10 @@ var serverTask = function() {
   };
 
   // Exclude files
-  for (var key = 0; key<config.tasks.server.exclude.length; key++) {
-    paths.src.push('!' + path.join(config.root.src, config.tasks.server.src, config.tasks.server.exclude[key]));
+  for (let key = 0; key < config.tasks.server.exclude.length; key += 1) {
+    const pathExclude = path.join(config.root.src, config.tasks.server.src,
+      config.tasks.server.exclude[key]);
+    paths.src.push(`!${pathExclude}`);
   }
 
   return gulp.src(paths.src)

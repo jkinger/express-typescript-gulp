@@ -1,14 +1,14 @@
-var config = require('../config');
-if (!config.tasks.images) { return; }
+const config = require('../config');
 
-var changed = require('gulp-changed');
-var gulp = require('gulp');
-var path = require('path');
+if (!config.tasks.images) { process.exit(0); }
 
-var imagesTask = function () {
+const changed = require('gulp-changed');
+const gulp = require('gulp');
+const path = require('path');
 
-  var paths = {
-    src: path.join(config.root.src, config.tasks.images.src, '/**/*.{' + config.tasks.images.extensions + '}'),
+const imagesTask = function imagesTask() {
+  const paths = {
+    src: path.join(config.root.src, config.tasks.images.src, `/**/*.{${config.tasks.images.extensions}}`),
     dest: path.join(config.root.dest, config.tasks.images.dest)
   };
 

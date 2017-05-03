@@ -1,11 +1,10 @@
-var config = require('../config');
-var gulp = require('gulp');
-var path = require('path');
-var nodemon = require('gulp-nodemon');
+const config = require('../config');
+const gulp = require('gulp');
+const path = require('path');
+const nodemon = require('gulp-nodemon');
 
-var nodemonTask = function () {
-
-  var paths = {
+const nodemonTask = function nodemonTask() {
+  const paths = {
     server: path.join(config.root.dest, config.tasks.nodemon.server),
     dest: config.root.dest
   };

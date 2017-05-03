@@ -1,14 +1,14 @@
-var config = require('../config');
-if (!config.tasks.fonts) { return; }
+const config = require('../config');
 
-var changed = require('gulp-changed');
-var gulp = require('gulp');
-var path = require('path');
+if (!config.tasks.fonts) { process.exit(0); }
 
-var fontsTask = function () {
+const changed = require('gulp-changed');
+const gulp = require('gulp');
+const path = require('path');
 
-  var paths = {
-    src: path.join(config.root.src, config.tasks.fonts.src, '/**/*.{' + config.tasks.fonts.extensions + '}'),
+const fontsTask = function fontsTask() {
+  const paths = {
+    src: path.join(config.root.src, config.tasks.fonts.src, `/**/*.{${config.tasks.fonts.extensions}}`),
     dest: path.join(config.root.dest, config.tasks.fonts.dest)
   };
 

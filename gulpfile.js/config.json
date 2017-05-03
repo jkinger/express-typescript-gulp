@@ -14,22 +14,12 @@
       "dest": "./"
     },
 
-    "webpack": {
-      "src": "app",
-      "dest": "js",
-      "entries": {
-        "vendor": ["./vendor.ts"],
-        "app": ["./main.ts"]
-      },
-      "extensions": ["ts", "js", "json"]
-    },
-
     "server": {
       "src": "",
       "dest": "./",
       "exclude": [
         "**/*.spec.ts",
-        "app/**/*"
+        "js/**/*"
       ],
       "compilerOptions": {
         "noImplicitAny": false
@@ -37,17 +27,13 @@
       "extensions": ["ts"]
     },
 
-    "js": {
+    "javascripts": {
       "src": "js",
       "dest": "js",
       "entries": {
-        "app": ["./app.js"]
+        "app": ["./main.ts"]
       },
-      "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015", "stage-1"],
-        "plugins": []
-      },
+      "extensions": ["ts", "js", "json"],
       "extractSharedJs": false
     },
 

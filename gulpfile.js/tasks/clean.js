@@ -1,9 +1,9 @@
-var gulp   = require('gulp');
-var del    = require('del');
-var path   = require('path');
-var config = require('../config');
+const gulp = require('gulp');
+const del = require('del');
+const path = require('path');
+const config = require('../config');
 
-var cleanTask = function (cb) {
+const cleanTask = function cleanTask() {
   return del([path.resolve(config.root.dest)], { force: true });
 };
 

@@ -1,20 +1,20 @@
-var config = require('../config');
-if (!config.tasks.stylesheets) { return; }
+const config = require('../config');
 
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var handleErrors = require('../lib/handleErrors');
-var autoprefixer = require('gulp-autoprefixer');
-var path = require('path');
-var cssnano = require('gulp-cssnano');
+if (!config.tasks.stylesheets) { process.exit(0); }
 
-var stylesheetsTask = function () {
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const handleErrors = require('../lib/handleErrors');
+const autoprefixer = require('gulp-autoprefixer');
+const path = require('path');
+const cssnano = require('gulp-cssnano');
 
-  var paths = {
+const stylesheetsTask = function stylesheetsTask() {
+  const paths = {
     src: path.join(config.root.src, config.tasks.stylesheets.src,
-      '/**/*.{' + config.tasks.stylesheets.extensions + '}'),
+      `/**/*.{${config.tasks.stylesheets.extensions}}`),
     dest: path.join(config.root.dest, config.tasks.stylesheets.dest)
   };
 

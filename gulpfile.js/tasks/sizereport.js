@@ -1,16 +1,17 @@
-var config = require('../config');
-var gulp = require('gulp');
-var repeatString = require('../lib/repeatString');
-var sizereport = require('gulp-sizereport');
-var path = require('path');
+const config = require('../config');
+const gulp = require('gulp');
+const sizereport = require('gulp-sizereport');
+const path = require('path');
 
-gulp.task('size-report', function () {
-  return gulp.src([
+gulp.task('size-report', () => {
+  const sizeReportTask = gulp.src([
     path.join(config.root.dest, config.tasks.fonts.dest, '/**/*'),
-    path.join(config.root.dest, config.tasks.js.dest, '/**/*'),
+    path.join(config.root.dest, config.tasks.javascripts.dest, '/**/*'),
     path.join(config.root.dest, config.tasks.stylesheets.dest, '/**/*'),
     path.join(config.root.dest, config.tasks.images.dest, '/**/*')])
     .pipe(sizereport({
       gzip: true
     }));
+
+  return sizeReportTask;
 });

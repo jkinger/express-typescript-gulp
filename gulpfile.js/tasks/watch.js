@@ -1,17 +1,28 @@
-var config = require('../config');
-var gulp   = require('gulp');
-var path   = require('path');
-var watch  = require('gulp-watch');
+const config = require('../config');
+const gulp = require('gulp');
+const path = require('path');
+const watch = require('gulp-watch');
 
-var watchTask = function() {
-  var watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite','html', 'stylesheets', 'server'];
+const watchTask = function watchTask() {
+  const watchableTasks = ['fonts', 'iconFont', 'images', 'svgSprite', 'html', 'stylesheets', 'server', 'javascripts'];
 
-  watchableTasks.forEach(function(taskName) {
-    var task = config.tasks[taskName];
-    if(task) {
-      var glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}');
-      watch(glob, function() {
-       require('./' + taskName)();
+  watchableTasks.forEach((taskName) => {
+    const task = config.tasks[taskName];
+    if (task) {
+      const glob = [
+        path.join(config.root.src, task.src, `**/*.{${task.extensions.join(',')}}`)
+      ];
+
+      if (task.exclude) {
+         // Exclude files
+        for (let key = 0; key < task.exclude.length; key += 1) {
+          const pathExclude = path.join(config.root.src, task.src, task.exclude[key]);
+          glob.push(`!${pathExclude}`);
+        }
+      }
+
+      watch(glob, () => {
+        require(`./${taskName}`)();
       });
     }
   });

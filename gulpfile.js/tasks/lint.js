@@ -1,14 +1,11 @@
-var config = require('../config');
-var gulp = require('gulp');
-var path = require('path');
-var tslint = require('gulp-tslint');
+const config = require('../config');
+const gulp = require('gulp');
+const path = require('path');
+const tslint = require('gulp-tslint');
 
-var lintTask = function () {
-
-  var paths = {
-    src: [
-      path.join(config.root.src, config.tasks.server.src, '/**/*.ts')
-    ]
+const lintTask = function lintTask() {
+  const paths = {
+    src: [path.join(config.root.src, config.tasks.server.src, '/**/*.ts')]
   };
 
   gulp.src(paths.src)
@@ -18,5 +15,5 @@ var lintTask = function () {
     }));
 };
 
-gulp.task('lint', ['jshint'], lintTask);
+gulp.task('lint', ['eslint'], lintTask);
 module.exports = lintTask;

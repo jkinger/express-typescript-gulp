@@ -1,65 +1,72 @@
-var config = require('../config');
-if (!config.tasks.js || !config.tasks.webpack) { return; }
+const config = require('../config');
 
-var path = require('path');
-var pathToUrl = require('./pathToUrl');
-var webpack = require('webpack');
-var WebpackManifest = require('./webpackManifest');
+if (!config.tasks.javascripts) {
+  process.exit(0);
+}
 
-module.exports = function (env) {
-  var webpackSrc = path.resolve(config.root.src, config.tasks.webpack.src);
-  var webpackDest = path.resolve(config.root.dest, config.tasks.webpack.dest);
-  var publicPath = pathToUrl(config.tasks.webpack.dest, '/');
+const path = require('path');
+const pathToUrl = require('./pathToUrl');
+const webpack = require('webpack');
+const WebpackManifest = require('./webpackManifest');
 
-  var extensions = config.tasks.webpack.extensions.map(function (extension) {
-    return '.' + extension;
-  });
+module.exports = function webpackMultiConfig(env) {
+  const jsSrc = path.resolve(config.root.src, config.tasks.javascripts.src);
+  const jsDest = path.resolve(config.root.dest, config.tasks.javascripts.dest);
+  const publicPath = pathToUrl(config.tasks.javascripts.dest, '/');
 
-  var rev = config.tasks.production.rev && env === 'production';
+  const extensions = config.tasks.javascripts.extensions.map(extension => `.${extension}`);
 
-  var webpackConfig = {
-    context: webpackSrc,
-    entry: config.tasks.webpack.entries,
+  const rev = config.tasks.production.rev && env === 'production';
+
+  const webpackConfig = {
+    context: jsSrc,
+    entry: config.tasks.javascripts.entries,
     output: {
-      path: path.normalize(webpackDest), // The output directory as absolute path (required).
+      path: path.normalize(jsDest), // The output directory as absolute path (required).
       filename: rev ? '[name]-[hash].js' : '[name].js', // Name of each output file on disk (not an absolute path).
-      publicPath: publicPath
+      publicPath
     },
     plugins: [],
     resolve: {
-      extensions: extensions, // An array of extensions that should be used to resolve modules.
-      modules: [webpackSrc, path.resolve('./', 'node_modules')],
+      extensions, // An array of extensions that should be used to resolve modules.
+      modules: [jsSrc, path.resolve('./', 'node_modules')]
     },
     module: {
       rules: [
         {
-          // Loader to transpile the Typescript code to ES5, guided by the tsconfig.json file.
           test: /\.ts$/,
-          loaders: [
-            {
-              loader: 'awesome-typescript-loader',
-              options: { configFileName: 'tsconfig.webpack.json' }
-            }, 'angular2-template-loader' // Loads angular components' template and styles.
-          ]
+          exclude: /node_modules/,
+          use: [{
+            loader: 'ts-loader',
+            options: {
+              configFileName: 'tsconfig.webpack.json',
+            }
+          }]
         },
         {
-          // Loader for component templates.
-          test: /\.html$/,
-          loader: 'html-loader'
-        },
-        {
-          // Loader for component-scoped styles (the ones specified in a component's styleUrls metadata property)
-          test: /\.css$/,
-          loader: 'raw-loader'
+          test: /\.(png|jpg|gif|svg)$/,
+          loader: 'raw-loader',
         }
       ]
     }
   };
 
   // Provide global objects to imported modules to resolve dependencies (e.g. jquery)
-  if (config.tasks.webpack.provide) {
-    webpackConfig.plugins.push(new webpack.ProvidePlugin(config.tasks.webpack.provide));
+  if (config.tasks.javascripts.provide) {
+    webpackConfig.plugins.push(new webpack.ProvidePlugin(config.tasks.javascripts.provide));
   }
+
+  webpackConfig.plugins.push(
+
+    // use to define environment constables that you can reference within the application.
+    new webpack.DefinePlugin({
+      ENV: JSON.stringify(env),
+      'process.env.NODE_ENV': JSON.stringify(env)
+    }),
+
+    // stops the build if there is an error.
+    new webpack.NoEmitOnErrorsPlugin()
+  );
 
   if (env === 'production') {
     if (rev) {
@@ -67,27 +74,12 @@ module.exports = function (env) {
     }
 
     webpackConfig.plugins.push(
-      new webpack.DefinePlugin({
-        ENV: JSON.stringify(env),
-        'process.env': {
-          'NODE_ENV': JSON.stringify(env)
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin(),
-      new webpack.NoEmitOnErrorsPlugin()
+      // minifies the bundles.
+      new webpack.optimize.UglifyJsPlugin()
     );
   } else {
     webpackConfig.devtool = 'eval-cheap-module-source-map'; // Developer tool to enhance debugging
     webpackConfig.output.pathinfo = true;
-
-    webpackConfig.plugins.push(
-      new webpack.DefinePlugin({
-        ENV: JSON.stringify(env),
-        'process.env': {
-          'NODE_ENV': JSON.stringify(env)
-        }
-      })
-    );
   }
 
   return webpackConfig;

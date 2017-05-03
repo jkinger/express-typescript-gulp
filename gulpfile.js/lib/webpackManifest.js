@@ -1,22 +1,20 @@
-var path = require('path');
-var fs   = require('fs');
-var pathToUrl = require('./pathToUrl');
+const path = require('path');
+const fs = require('fs');
+const pathToUrl = require('./pathToUrl');
 
-module.exports = function(publicPath, dest, filename) {
+module.exports = function webpackManifest(publicPath, dest, filename) {
   filename = filename || 'rev-manifest.json';
 
-  return function() {
-    this.plugin('done', function(stats) {
-      stats    = stats.toJson();
-      var chunks   = stats.assetsByChunkName;
-      var manifest = {};
+  return function createManifest() {
+    this.plugin('done', (stats) => {
+      stats = stats.toJson();
+      const chunks = stats.assetsByChunkName;
+      const manifest = {};
 
-      for (var key in chunks) {
-        if (chunks.hasOwnProperty(key)) {
-          var originalFilename = key + '.js';
-          manifest[pathToUrl(publicPath, originalFilename)] = pathToUrl(publicPath, chunks[key]);
-        }
-      }
+      Object.keys(chunks).forEach((key) => {
+        const originalFilename = `${key}.js`;
+        manifest[pathToUrl(publicPath, originalFilename)] = pathToUrl(publicPath, chunks[key]);
+      });
 
       fs.writeFileSync(
         path.join(process.cwd(), dest, filename),

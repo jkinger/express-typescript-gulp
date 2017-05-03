@@ -1,17 +1,16 @@
-var config = require('../config');
-if (!config.tasks.svgSprite) { return; }
+const config = require('../config');
 
-var gulp = require('gulp');
-var svgstore = require('gulp-svgstore');
-var path = require('path');
+if (!config.tasks.svgSprite) { process.exit(0); }
 
-var svgSpriteTask = function () {
+const gulp = require('gulp');
+const svgstore = require('gulp-svgstore');
+const path = require('path');
 
-  var settings = {
+const svgSpriteTask = function svgSpriteTask() {
+  const settings = {
     src: path.join(config.root.src, config.tasks.svgSprite.src, '/*.svg'),
     dest: path.join(config.root.dest, config.tasks.svgSprite.dest)
   };
-
 
   return gulp.src(settings.src)
     .pipe(svgstore())

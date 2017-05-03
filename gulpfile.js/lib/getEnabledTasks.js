@@ -1,19 +1,19 @@
-var config  = require('../config');
-var compact = require('lodash/compact');
+const config = require('../config');
+const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
-var assetTasks = ['fonts', 'images', 'svgSprite']; // removed 'iconFont'
-var codeTasks = ['html', 'stylesheets', 'webpack', 'server'];
+const assetTasks = ['fonts', 'images', 'svgSprite']; // removed 'iconFont'
+const codeTasks = ['html', 'stylesheets', 'javascripts', 'server'];
 
-module.exports = function(env) {
-
+module.exports = (env) => {
   function matchFilter(task) {
-    if(config.tasks[task]) {
-      if(task === 'webpack') {
-        task = env === 'production' ? 'webpack:production' : 'webpack';
+    if (config.tasks[task]) {
+      if (task === 'javascripts') {
+        task = env === 'production' ? 'javascripts:production' : 'javascripts';
       }
       return task;
     }
+    return null;
   }
 
   function exists(value) {

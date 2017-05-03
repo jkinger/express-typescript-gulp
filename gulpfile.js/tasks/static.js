@@ -1,16 +1,16 @@
-var config      = require('../config');
-if(!config.tasks.static) {return; }
+const config = require('../config');
 
-var changed = require('gulp-changed');
-var gulp    = require('gulp');
-var path    = require('path');
+if (!config.tasks.static) { process.exit(0); }
 
-var staticTask = function() {
+const changed = require('gulp-changed');
+const gulp = require('gulp');
+const path = require('path');
 
-  var paths = {
+const staticTask = function staticTask() {
+  const paths = {
     src: [
       path.join(config.root.src, config.tasks.static.src, '/**'),
-      path.join('!' + config.root.src, config.tasks.static.src, '/README.md')
+      path.join(`!${config.root.src}`, config.tasks.static.src, '/README.md')
     ],
     dest: path.join(config.root.dest, config.tasks.static.dest)
   };
