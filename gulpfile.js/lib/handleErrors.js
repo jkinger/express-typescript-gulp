@@ -1,7 +1,7 @@
 const notify = require('gulp-notify');
 
-module.exports = function handleErrors(errorObject, ...args) {
-  notify.onError(errorObject.toString().split(': ').join(':\n')).apply(this, args);
+module.exports = function handleErrors(errorObject) {
+  notify.onError(errorObject.toString().split(': ').join(':\n')).apply(this, arguments);
   // Keep gulp from hanging on this task
   if (typeof this.emit === 'function') { this.emit('end'); }
 };

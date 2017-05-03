@@ -34,18 +34,24 @@ module.exports = function webpackMultiConfig(env) {
     module: {
       rules: [
         {
+          // Loader to transpile the Typescript code to ES5, guided by the tsconfig.json file.
           test: /\.ts$/,
-          exclude: /node_modules/,
-          use: [{
-            loader: 'ts-loader',
-            options: {
-              configFileName: 'tsconfig.webpack.json',
-            }
-          }]
+          loaders: [
+            {
+              loader: 'awesome-typescript-loader',
+              options: { configFileName: 'tsconfig.webpack.json' }
+            }, 'angular2-template-loader' // Loads angular components' template and styles.
+          ]
         },
         {
-          test: /\.(png|jpg|gif|svg)$/,
-          loader: 'raw-loader',
+          // Loader for component templates.
+          test: /\.html$/,
+          loader: 'html-loader'
+        },
+        {
+          // Loader for component-scoped styles
+          test: /\.css$/,
+          loader: 'raw-loader'
         }
       ]
     }
@@ -58,6 +64,14 @@ module.exports = function webpackMultiConfig(env) {
 
   webpackConfig.plugins.push(
 
+    // Workaround for angular/angular#11580
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)@angular/,
+      jsSrc, // location of your src
+      {} // a map of your routes
+    ),
+
     // use to define environment constables that you can reference within the application.
     new webpack.DefinePlugin({
       ENV: JSON.stringify(env),
@@ -66,6 +80,7 @@ module.exports = function webpackMultiConfig(env) {
 
     // stops the build if there is an error.
     new webpack.NoEmitOnErrorsPlugin()
+
   );
 
   if (env === 'production') {
