@@ -9,8 +9,7 @@ module.exports = function compilerLogger(err, stats) {
 
   if (stats.compilation.errors.length > 0) {
     stats.compilation.errors.forEach((error) => {
-      const errorStr = `${error.loaderSource}:${error.message}`;
-      handleErrors(errorStr);
+      handleErrors(error);
       statColor = 'red';
     });
   } else {
