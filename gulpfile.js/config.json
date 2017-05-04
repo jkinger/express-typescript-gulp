@@ -31,7 +31,7 @@
       "src": "js",
       "dest": "js",
       "entries": {
-        "app": ["./main.ts"]
+        "app": ["./app.ts"]
       },
       "extensions": ["ts", "js", "json"],
       "extractSharedJs": false
