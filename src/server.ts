@@ -12,11 +12,11 @@ const ROOT = path.join(path.resolve(__dirname, '../..'));
 
 // Controllers
 import index from './controllers/index';
-import about from './controllers/about';
-import blog from './controllers/blog';
-import contact from './controllers/contact';
-import portfolio from './controllers/portfolio';
-import services from './controllers/services';
+import cards from './controllers/cards';
+import flexbox from './controllers/flexbox';
+import examples from './controllers/examples';
+import tiers from './controllers/tiers';
+import more from './controllers/more';
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -48,11 +48,11 @@ app.use('/js', cacheControl, express.static(path.join(__dirname, 'js'), { maxAge
 
 // Add routes
 app.use('/', index);
-app.use('/about', about);
-app.use('/blog', blog);
-app.use('/contact', contact);
-app.use('/portfolio', portfolio);
-app.use('/services', services);
+app.use('/cards', cards);
+app.use('/flexbox', flexbox);
+app.use('/examples', examples);
+app.use('/tiers', tiers);
+app.use('/more', more);
 
 // Error Handler.
 app.use(errorHandler());

@@ -1,269 +1,513 @@
 extends layouts/default.pug
 
+block header
+  header#first
+    .header-content
+      .inner
+        h1 What&apos;s New in Bootstrap 4
+        h5.wow.fadeIn.text-normal.wow.fadeIn A free, one-page theme to highlight the new features
+        |
+        a.btn.btn-secondary.btn-xl.page-scroll.wow.fadeInUp.m-t-3(href='#one') Get Started
+
 block content
-  .slider
+  section#one
+    .container.wow.fadeInUp
+      h2 Cards
+      p.lead
+        | What you notice first in
+        a(href='http://v4-alpha.getbootstrap.com/') Bootstrap 4
+        |  is that
+        code .panel
+        |  and
+        code .well
+        |  have been replaced by the
+        code .card
+        | . This makes a lot of sense as &quot;cards&quot; are one of the more well known trends in responsive design. The
+        a(href='') Bootstrap 4 Cards
+        |  can be singular, grouped together (as shown) or
+        a(href='') equal height
+        | . There are many different layout and content options.
+      .card-group
+        .card
+          img.card-img-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg', alt='Card image cap')
+          .card-block
+            h4.card-title Consise
+            p.card-text
+              | Cards are a good way to display content composed of different types of objects. They&rsquo;re well-suited for presenting similar objects whose size or supported actions vary, like headings and photos with captions.
+        .card
+          img.card-img-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample19.jpg', alt='Card image cap')
+          .card-block
+            h4.card-title Grouped
+            p.card-text
+              | Use card groups to render equal height cards without gutters between the cards. Use
+              code .card-deck
+              |  for cards that aren&rsquo;t attached to each another.
+        .card
+          img.card-img-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg', alt='Card image cap')
+          .card-block
+            h4.card-title Same Height
+            p.card-text
+              | A frequent problem occurs when you have multiple items in a row with content of varying height. Thanks to flexbox (and display:table) we now have equal height cards!
+  section#two.bg-alt
     .container
-      #about-slider
-        #carousel-slider.carousel.slide(data-ride='carousel')
-          ol.carousel-indicators.visible-xs
-            li.active(data-target='#carousel-slider', data-slide-to='0')
-            li(data-target='#carousel-slider', data-slide-to='1')
-            li(data-target='#carousel-slider', data-slide-to='2')
-          .carousel-inner
-            .item.active
-              img.img-responsive(src='images/slider_one.jpg', alt='')
-            .item
-              img.img-responsive(src='images/slider_one.jpg', alt='')
-            .item
-              img.img-responsive(src='images/slider_one.jpg', alt='')
-          a.left.carousel-control.hidden-xs(href='#carousel-slider', data-slide='prev')
-            i.fa.fa-angle-left
-          a.right.carousel-control.hidden-xs(href='#carousel-slider', data-slide='next')
-            i.fa.fa-angle-right
-  section#feature
+      .row
+        .col-lg-12.text-center
+          h2.mt-0.text-primary Flexbox
+          hr.primary
+    .container.wow.fadeInUp
+      .row
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-ios-grid-view-outline.wow.fadeIn(data-wow-delay='.1s')
+            h6.text-uppercase Easier
+            p.text-muted.m-b-0
+              | Flexbox provides
+              a(href='http://v4-alpha.getbootstrap.com/getting-started/flexbox') simpler, more flexible layout
+              |  options like vertical centering.
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-social-sass.wow.fadeInUp
+            h6.text-uppercase Sass-y
+            p.text-muted.m-b-0 Use SASS to easily customize your Bootstrap 4 projects.
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-social-css3-outline.wow.fadeIn(data-wow-delay='.1s')
+            h6.text-uppercase It&apos;s Modern
+            p.text-muted.m-b-0
+              | Introduced in CSS3, flexbox won&apos;t work in older browsers like
+              a(href='http://caniuse.com/#feat=flexbox') IE9
+              | .
+  section#examples
+    .container.text-center
+      .row
+        .col-lg-10.offset-lg-1.col-12.text-center
+          h1.mt-0.text-primary Bootstrap 4 Examples
+          hr.primary
+        .col-sm-6.text-center
+          h5.mt-0.text-primary Layouts &amp; Templates
+          .nav.flex-column.text-center
+            a.nav-link(href='//www.codeply.com/go/wECEBeWpLO/bootstrap-4-sticky-footer-flexbox') Sticky Footer
+            |
+            a.nav-link(href='//www.codeply.com/go/KrUO8QpyXP/bootstrap-4-dashboard') Dashboard
+            |
+            a.nav-link(href='//www.codeply.com/go/i8xuvOmVw3/bootstrap-4-full-height-jumbotron-vertical-center') Full-height Jumbotron Vertical Center
+            |
+            a.nav-link(href='//www.codeply.com/go/i8xuvOmVw3/bootstrap-4-affix-nav-and-sidebar-layout') Header, Affix Navbar &amp; Sidebar
+            |
+            a.nav-link(href='//www.codeply.com/go/JbaVzJCNLJ/bootstrap-4-off-canvas-sidebar') Off-canvas Sidebar
+        .col-sm-6.text-center
+          h5.mt-0.text-primary Code Snippets
+          .nav.flex-column.text-center
+            a.nav-link(href='//www.codeply.com/go/kTGlK9Axdk/bootstrap-4-navbar-align-center') Navbar Align Center
+            |
+            a.nav-link(href='//www.codeply.com/go/kTGlK9Axdk/bootstrap-4-navbar-align-right') Navbar Align Right
+            |
+            a.nav-link(href='//www.codeply.com/go/1ZFF5CEXM5/bootstrap-4-custom-navbar-color') Custom Navbar Color
+            |
+            a.nav-link(href='//www.codeply.com/go/q0b6ILuRyx/bootstrap-4-vertical-sidebar-nav-with-submenu') Multi-level Vertical Side Nav
+            |
+            a.nav-link(href='//www.codeply.com/go/C3ZSBLzAZC/bootstrap-4-card-examples') Card Examples
+  section#three
+    .container-fluid
+      h5.text-primary.text-center.text-uppercase Now there are 5 Breakpoints
+      p.text-center
+        small To accomodate a variety of devices and screen widths
+      .row
+        .col-sm-10.offset-sm-1.col-12.offset-0
+          .row
+            .col-md-2.offset-md-1.offset-sm-0
+              .card-block.text-center
+                h1.card-title XS
+                h3.text-muted &lt;34 em
+                hr.primary.hidden-sm-up
+            .col-md-2
+              .card-block.text-center
+                h1.card-title SM
+                h3.text-muted &ge;34 em
+                hr.primary.hidden-md-up
+            .col-md-2
+              .card-block.text-center
+                h1.card-title MD
+                h3.text-muted &ge;48 em
+                hr.primary.hidden-lg-up
+            .col-md-2
+              .card-block.text-center
+                h1.card-title LG
+                h3.text-muted &ge;62 em
+                hr.primary.hidden-xl-up
+            .col-md-2
+              .card-block.text-center
+                h1.card-title XL
+                h3.text-muted &ge;75 em
+                hr.primary
+      .row
+        .col-10.offset-1
+          .row
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='//s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample20.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card.card-inverse
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample22.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample15.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample35.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample35.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample16.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample16.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.card-img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample11.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample11.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample23.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.card-img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample9.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample9.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample5.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample5.jpg') view
+            .col-xl-2.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample4.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample4.jpg') view
+            .col-xl-3.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.card-img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample3.jpg') view
+            .col-xl-3.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample2.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample2.jpg') view
+            .col-xl-3.col-lg-3.col-md-4.col-sm-6.text-center
+              .card
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample7.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample7.jpg') view
+            .col-xl-3.offset-xl-0.col-lg-3.offset-lg-0.col-md-4.offset-md-4.col-sm-6.text-center
+              .card.m-x-auto
+                img.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample21.jpg')
+                .card-img-overlay
+                  h4.card-title.text-center
+                    a.text-light(href='#galleryModal', data-toggle='modal', data-src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample21.jpg') view
+    br
+  aside.bg-alt
+    .container.text-center
+      h2.text-primary.text-center The Grid is More Flexible
+      hr.primary
+      br
+      .row.wow.fadeInUp
+        .col-md-3.col-sm-6.col-12.text-center
+          h3 Start
+          i.icon-lg.ion-ios-speedometer-outline.wow.pulse
+          h1.text-primary 100
+        .col-md-3.col-sm-6.col-12.text-center
+          h3 Migrate
+          i.icon-lg.ion-ios-location-outline.wow.pulse
+          h1.text-primary 3421
+        .col-md-3.col-sm-6.col-12.text-center
+          h3 Build
+          i.icon-lg.ion-ios-pulse.wow.pulse
+          h1.text-primary 4%
+        .col-md-3.col-sm-6.col-12.text-center
+          h3 Play
+          i.icon-lg.ion-ios-game-controller-b-outline.wow.pulse
+          h1.text-primary 50%
+      hr
+      br
     .container
+<<<<<<< HEAD
       .center.wow.fadeInDown
         my-app
   section#recent-works
+=======
+      .row
+        .col-sm-6  6
+        .col-sm-6.text-normal
+          .card.bg-primary  6 units
+        .col-sm-5  5
+        .col-sm-7.text-normal
+          .card.bg-primary  7 units
+        .col-sm-4  4
+        .col-sm-8.text-normal
+          .card.bg-primary  8 units
+        .col-sm-3  3
+        .col-sm-9.text-normal
+          .card.bg-primary  9 units
+        .col-sm-2  2
+        .col-sm-10.text-normal
+          .card.bg-primary  10 units
+        .col-sm-1  1
+        .col-sm-11.text-normal
+          .card.bg-primary  11 units
+    hr
+>>>>>>> develop
     .container
-      .center.wow.fadeInDown
-        h2 Recent Works
-        p.lead
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+      .row
+        .col-lg-2.text-normal
+          .card.bg-primary  2
+        .col-lg-10
+        .col-lg-4.text-normal
+          .card.bg-primary  4
+        .col-lg-8
+        .col-lg-6.text-normal
+          .card.bg-primary  6
+        .col-lg-6
+        .col-lg-8.text-normal
+          .card.bg-primary  8
+        .col-lg-4
+        .col-lg-10.text-normal
+          .card.bg-primary  10
+        .col-lg-2
+        .col-lg-12.text-normal
+          .card.bg-primary  12
+  section#four
+    .container
+      .row
+        .col-12.col-lg-6
+          h2.text-nowrap Fonts got larger
+        .col-12.col-lg-6.text-right
+          button.btn.btn-lg.text-normal.btn-outline-secondary Outline
+          |
+          button.btn.btn-lg.text-normal.btn-outline-primary Buttons
+          |
+          button.btn.btn-lg.text-normal.btn-outline-danger Are Here
+        .col-12
           br
-          |  et dolore magna aliqua. Ut enim ad minim veniam
+          h1.display-4 Wow.
+          p.lead.text-justify
+            | Text is larger in Bootstrap 4. The default font size is now 16px. There are also new &quot;Display headings&quot; that really stand out. The new &grave;em&grave; based sizing is cool too.
+      hr
       .row
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item1.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item1.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item2.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item2.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item3.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item3.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item4.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') MultiPurpose theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item4.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item5.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item5.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item6.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item6.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item7.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item7.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-        .col-xs-12.col-sm-4.col-md-3
-          .recent-work-wrap
-            img.img-responsive(src='images/portfolio/recent/item8.png', alt='')
-            .overlay
-              .recent-work-inner
-                h3
-                  a(href='#') Business theme
-                p There are many variations of passages of Lorem Ipsum available, but the majority
-                a.preview(href='images/portfolio/full/item8.png', rel='prettyPhoto')
-                  i.fa.fa-eye
-                  |  View
-  section#middle
+        .col-md-6.col-12.text-center
+          nav.navbar.navbar-inverse.bg-inverse.navbar-toggleable.text-normal.rounded
+            ul.navbar-nav
+              li.nav-item.active
+                a.nav-link(href='#') Home
+              li.nav-item
+                a.nav-link(href='#') Features
+              li.nav-item
+                a.nav-link(href='#') Pricing
+              li.nav-item
+                a.nav-link(href='#') About
+        .col-md-6.col-12
+          h2 Navbar
+          p.text-justify
+            | The new Bootstrap 4
+            code .navbar
+            |  code is lighter. You can make it responsive using the Collapse component and
+            code .navbar-toggleable-*
+            |  classes that enable you to control the breakpoint.
+        .col-12.clearfix
+          hr
+        .col-md-6.col-12
+          h2 RIP icons, affix, etc..
+          p.text-justify
+            | Some components have been removed from Bootstrap 4. The Glyphicons icon fonts are no longer included, but it&apos;s easy to utilize another font like FontAwesome,
+            a(href='https://octicons.github.com/') Octicons
+            |  or
+            a(href='http://ionicons.com/') Ionicons
+            | . The Affix jQuery plugin has also been dropped. The new recommendation is to use HTML5 position: sticky or a sticky polyfill instead.
+        .col-md-6.col-12.text-center
+          .row
+            .col-lg-3.col-md-3.col-6.text-center
+              a(href='#alertModal', data-toggle='modal', data-target='#alertModal')
+                i.icon-lg.ion-ios-cloud-download-outline.wow.fadeIn
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-pie-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-star-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-heart-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-pulse.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-refresh-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-gear-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-timer-outline.wow.fadeIn.text-primary
+        .col-12.clearfix
+          hr
+        .col-md-6.col-12
+          .card.text-normal
+            .card-block
+              ul.list-unstyled
+                li.text-capitalize
+                  code.text-lowercase text-capitalize
+                  |  Capitalize each word
+                li.text-uppercase
+                  code.text-lowercase text-uppercase
+                  |  Uppercase text
+                li.text-lowercase
+                  code text-lowercase
+                  |  There is lowercase too
+                li.text-truncate
+                  code text-truncate
+                  |  some longer text that won&apos;t wrap and will truncate with ellipsis at the end.
+              h6 Migration tips
+              ul.list-unstyled
+                li
+                  code well
+                  |  =
+                  code card card-block
+                li
+                  code panel panel-default
+                  |  =
+                  code card
+                li
+                  code pull-right
+                  |  =
+                  code float-right
+                li
+                  code img-responsive
+                  |  =
+                  code img-fluid
+                li
+                  code list-inline &gt; li
+                  |  =
+                  code list-inline-item
+                li
+                  | add
+                  code nav-item
+                  |  to nav navbar &gt; li
+                li
+                  | add
+                  code nav-link
+                  |  to nav navbar &gt; li &gt; a
+                li
+                  | the
+                  code active
+                  |  class is added to
+                  code nav-item
+                  |  for scrollspy
+                li
+                  code carousel-inner &gt; item
+                  |  =
+                  code carousel-item
+                li
+                  code table-condensed
+                  |  =
+                  code table-sm
+                li
+                  code input-lg
+                  |  =
+                  code form-control-lg
+                li
+                  code input-sm
+                  |  =
+                  code form-control-sm
+              |  Here&apos;s a handy
+              a(href='http://upgrade-bootstrap.bootply.com/') Bootstrap 3 to 4 upgrade tool
+              |  to convert your code!
+        .col-md-6.col-12
+          h2 Handy utilities
+          p.text-justify
+            | Several simple, but useful
+            a(href='http://v4-alpha.getbootstrap.com/components/utilities') utility classes
+            |  have been added like text, margin and padding helpers. There are also
+            a(href='http://v4-alpha.getbootstrap.com/components/utilities/#contextual-colors-and-backgrounds') contextual colors
+            |  and
+            a(href='http://v4-alpha.getbootstrap.com/layout/responsive-utilities/') responsive utility
+            |  classes to hide content on specific breakpoints. There&apos;s even a new fluid Jumbotron!
+  aside.bg-alt
+    .container.text-center
+      .call-to-action
+        h2.text-primary Get Started
+        |
+        a.btn.btn-primary-outline.btn-lg.wow.flipInX.text-uppercase(href='http://bootstrap4.guide', target='ext') Free Download
+      br
+      hr
+      br
+      .row
+        .col-lg-10.offset-lg-1
+          h6.wide-space.text-center.text-uppercase Bootstrap is Built on these Standards
+          .row
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-html5-outline(title='html 5')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-sass(title='sass')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-javascript-outline(title='javascript')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-css3-outline(title='css 3')
+  section#last
     .container
       .row
-        .col-sm-6.wow.fadeInDown
-          .skill
-            h2 Our Skills
-            p
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            .progress-wrap
-              h3 Graphic Design
-              .progress
-                .progress-bar.color1(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 85%')
-                  span.bar-width 85%
-            .progress-wrap
-              h3 HTML
-              .progress
-                .progress-bar.color2(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width: 95%')
-                  span.bar-width 95%
-            .progress-wrap
-              h3 CSS
-              .progress
-                .progress-bar.color3(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
-                  span.bar-width 80%
-            .progress-wrap
-              h3 Wordpress
-              .progress
-                .progress-bar.color4(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
-                  span.bar-width 90%
-        .col-sm-6.wow.fadeInDown
-          .accordion
-            h2 Why People like us?
-            #accordion1.panel-group
-              .panel.panel-default
-                .panel-heading.active
-                  h3.panel-title
-                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseOne1')
-                      | Lorem ipsum dolor sit amet
-                      i.fa.fa-angle-right.pull-right
-                #collapseOne1.panel-collapse.collapse.in
-                  .panel-body
-                    .media.accordion-inner
-                      .pull-left
-                        img.img-responsive(src='images/accordion1.png')
-                      .media-body
-                        h4 Adipisicing elit
-                        p
-                          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              .panel.panel-default
-                .panel-heading
-                  h3.panel-title
-                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseTwo1')
-                      | Lorem ipsum dolor sit amet
-                      i.fa.fa-angle-right.pull-right
-                #collapseTwo1.panel-collapse.collapse
-                  .panel-body
-                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-              .panel.panel-default
-                .panel-heading
-                  h3.panel-title
-                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseThree1')
-                      | Lorem ipsum dolor sit amet
-                      i.fa.fa-angle-right.pull-right
-                #collapseThree1.panel-collapse.collapse
-                  .panel-body
-                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-              .panel.panel-default
-                .panel-heading
-                  h3.panel-title
-                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#collapseFour1')
-                      | Lorem ipsum dolor sit amet
-                      i.fa.fa-angle-right.pull-right
-                #collapseFour1.panel-collapse.collapse
-                  .panel-body
-                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-  section#bottom
-    .container.wow.fadeInDown(data-wow-duration='1000ms', data-wow-delay='600ms')
-      .row
-        .col-md-3.col-sm-6
-          .widget
-            h3 Company
-            ul
-              li
-                a(href='#') About us
-              li
-                a(href='#') We are hiring
-              li
-                a(href='#') Meet the team
-              li
-                a(href='#') Copyright
-        .col-md-3.col-sm-6
-          .widget
-            h3 Support
-            ul
-              li
-                a(href='#') Faq
-              li
-                a(href='#') Blog
-              li
-                a(href='#') Forum
-              li
-                a(href='#') Documentation
-        .col-md-3.col-sm-6
-          .widget
-            h3 Developers
-            ul
-              li
-                a(href='#') Web Development
-              li
-                a(href='#') SEO Marketing
-              li
-                a(href='#') Theme
-              li
-                a(href='#') Development
-        .col-md-3.col-sm-6
-          .widget
-            h3 Our Partners
-            ul
-              li
-                a(href='#') Adipisicing Elit
-              li
-                a(href='#') Eiusmod
-              li
-                a(href='#') Tempor
-              li
-                a(href='#') Veniam
-  .top-bar
-    .container
-      .row
-        .col-lg-12
-          .social
-            ul.social-share
-              li
-                a(href='#')
-                  i.fa.fa-facebook
-              li
-                a(href='#')
-                  i.fa.fa-twitter
-              li
-                a(href='#')
-                  i.fa.fa-linkedin
-              li
-                a(href='#')
-                  i.fa.fa-dribbble
-              li
-                a(href='#')
-                  i.fa.fa-skype
+        .col-lg-8.offset-lg-2.text-center
+          h2.margin-top-0.wow.fadeIn Get in Touch
+          hr.primary
+          p
+            | We love feedback. Fill out the form below and we&apos;ll get back to you as soon as possible.
+        .col-lg-10.offset-lg-1.text-center
+          form.contact-form.row
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Name')
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Email')
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Phone')
+            .col-md-12
+              label
+              textarea.form-control(rows='9', placeholder='Your message here..')
+            .col-md-4.offset-md-4
+              label
+              |
+              button.btn.btn-primary.btn-block.btn-lg(type='button', data-toggle='modal', data-target='#alertModal')
+                | Send
+                i.ion-android-arrow-forward

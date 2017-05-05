@@ -9,7 +9,11 @@ module.exports = function compilerLogger(err, stats) {
 
   if (stats.compilation.errors.length > 0) {
     stats.compilation.errors.forEach((error) => {
-      handleErrors(error);
+      if (Object.prototype.hasOwnProperty.call(error, 'loaderSource')) {
+        handleErrors(`loader: ${error.loaderSource} message: ${error.rawMessage}`);
+      } else {
+        handleErrors(error);
+      }
       statColor = 'red';
     });
   } else {

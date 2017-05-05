@@ -32,7 +32,8 @@
       "dest": "js",
       "entries": {
         "vendor": ["./vendor.ts"],
-        "app": ["./main.ts"]
+        "main": ["./main.ts"],
+        "app": ["./app.ts"]
       },
       "extensions": ["ts", "js", "json"],
       "extractSharedJs": false
