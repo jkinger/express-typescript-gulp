@@ -1,0 +1,180 @@
+extends layouts/default.pug
+
+block header
+  header#first
+    .header-content
+      .inner
+        h1 5 Tiers
+        h5.wow.fadeIn.text-normal.wow.fadeIn Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+
+block content
+  section#four
+    .container
+      .row
+        .col-12.col-lg-6
+          h2.text-nowrap Fonts got larger
+        .col-12.col-lg-6.text-right
+          button.btn.btn-lg.text-normal.btn-outline-secondary Outline
+          |
+          button.btn.btn-lg.text-normal.btn-outline-primary Buttons
+          |
+          button.btn.btn-lg.text-normal.btn-outline-danger Are Here
+        .col-12
+          br
+          h1.display-4 Wow.
+          p.lead.text-justify
+            | Text is larger in Bootstrap 4. The default font size is now 16px. There are also new &quot;Display headings&quot; that really stand out. The new &grave;em&grave; based sizing is cool too.
+      hr
+      .row
+        .col-md-6.col-12.text-center
+          nav.navbar.navbar-inverse.bg-inverse.navbar-toggleable.text-normal.rounded
+            ul.navbar-nav
+              li.nav-item.active
+                a.nav-link(href='#') Home
+              li.nav-item
+                a.nav-link(href='#') Features
+              li.nav-item
+                a.nav-link(href='#') Pricing
+              li.nav-item
+                a.nav-link(href='#') About
+        .col-md-6.col-12
+          h2 Navbar
+          p.text-justify
+            | The new Bootstrap 4
+            code .navbar
+            |  code is lighter. You can make it responsive using the Collapse component and
+            code .navbar-toggleable-*
+            |  classes that enable you to control the breakpoint.
+        .col-12.clearfix
+          hr
+        .col-md-6.col-12
+          h2 RIP icons, affix, etc..
+          p.text-justify
+            | Some components have been removed from Bootstrap 4. The Glyphicons icon fonts are no longer included, but it&apos;s easy to utilize another font like FontAwesome,
+            a(href='https://octicons.github.com/') Octicons
+            |  or
+            a(href='http://ionicons.com/') Ionicons
+            | . The Affix jQuery plugin has also been dropped. The new recommendation is to use HTML5 position: sticky or a sticky polyfill instead.
+        .col-md-6.col-12.text-center
+          .row
+            .col-lg-3.col-md-3.col-6.text-center
+              a(href='#alertModal', data-toggle='modal', data-target='#alertModal')
+                i.icon-lg.ion-ios-cloud-download-outline.wow.fadeIn
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-pie-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-star-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-heart-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-pulse.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-refresh-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-gear-outline.wow.fadeIn.text-primary
+            .col-lg-3.col-md-3.col-6.text-center
+              i.icon-lg.ion-ios-timer-outline.wow.fadeIn.text-primary
+        .col-12.clearfix
+          hr
+        .col-md-6.col-12
+          .card.text-normal
+            .card-block
+              ul.list-unstyled
+                li.text-capitalize
+                  code.text-lowercase text-capitalize
+                  |  Capitalize each word
+                li.text-uppercase
+                  code.text-lowercase text-uppercase
+                  |  Uppercase text
+                li.text-lowercase
+                  code text-lowercase
+                  |  There is lowercase too
+                li.text-truncate
+                  code text-truncate
+                  |  some longer text that won&apos;t wrap and will truncate with ellipsis at the end.
+              h6 Migration tips
+              ul.list-unstyled
+                li
+                  code well
+                  |  =
+                  code card card-block
+                li
+                  code panel panel-default
+                  |  =
+                  code card
+                li
+                  code pull-right
+                  |  =
+                  code float-right
+                li
+                  code img-responsive
+                  |  =
+                  code img-fluid
+                li
+                  code list-inline &gt; li
+                  |  =
+                  code list-inline-item
+                li
+                  | add
+                  code nav-item
+                  |  to nav navbar &gt; li
+                li
+                  | add
+                  code nav-link
+                  |  to nav navbar &gt; li &gt; a
+                li
+                  | the
+                  code active
+                  |  class is added to
+                  code nav-item
+                  |  for scrollspy
+                li
+                  code carousel-inner &gt; item
+                  |  =
+                  code carousel-item
+                li
+                  code table-condensed
+                  |  =
+                  code table-sm
+                li
+                  code input-lg
+                  |  =
+                  code form-control-lg
+                li
+                  code input-sm
+                  |  =
+                  code form-control-sm
+              |  Here&apos;s a handy
+              a(href='http://upgrade-bootstrap.bootply.com/') Bootstrap 3 to 4 upgrade tool
+              |  to convert your code!
+        .col-md-6.col-12
+          h2 Handy utilities
+          p.text-justify
+            | Several simple, but useful
+            a(href='http://v4-alpha.getbootstrap.com/components/utilities') utility classes
+            |  have been added like text, margin and padding helpers. There are also
+            a(href='http://v4-alpha.getbootstrap.com/components/utilities/#contextual-colors-and-backgrounds') contextual colors
+            |  and
+            a(href='http://v4-alpha.getbootstrap.com/layout/responsive-utilities/') responsive utility
+            |  classes to hide content on specific breakpoints. There&apos;s even a new fluid Jumbotron!
+  aside.bg-alt
+    .container.text-center
+      .call-to-action
+        h2.text-primary Get Started
+        |
+        a.btn.btn-primary-outline.btn-lg.wow.flipInX.text-uppercase(href='http://bootstrap4.guide', target='ext') Free Download
+      br
+      hr
+      br
+      .row
+        .col-lg-10.offset-lg-1
+          h6.wide-space.text-center.text-uppercase Bootstrap is Built on these Standards
+          .row
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-html5-outline(title='html 5')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-sass(title='sass')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-javascript-outline(title='javascript')
+            .col-sm-3.col-6.text-center
+              i.icon-lg.ion-social-css3-outline(title='css 3')
