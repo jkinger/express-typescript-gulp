@@ -1,0 +1,34 @@
+extends layouts/default.pug
+
+block content
+  section#last
+    .container
+      .row
+        .col-lg-8.offset-lg-2.text-center
+          h2.margin-top-0.wow.fadeIn Get in Touch
+          hr.primary
+          p
+            | We love feedback. Fill out the form below and we&apos;ll get back to you as soon as possible.
+        .col-lg-10.offset-lg-1.text-center
+          form.contact-form.row
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Name')
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Email')
+            .col-md-4
+              label
+              |
+              input.form-control(type='text', placeholder='Phone')
+            .col-md-12
+              label
+              textarea.form-control(rows='9', placeholder='Your message here..')
+            .col-md-4.offset-md-4
+              label
+              |
+              button.btn.btn-primary.btn-block.btn-lg(type='button', data-toggle='modal', data-target='#alertModal')
+                | Send
+                i.ion-android-arrow-forward

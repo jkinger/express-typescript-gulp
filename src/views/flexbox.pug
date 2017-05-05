@@ -1,0 +1,40 @@
+extends layouts/default.pug
+
+block header
+  header#first
+    .header-content
+      .inner
+        h1 Flexbox
+        h5.wow.fadeIn.text-normal.wow.fadeIn Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+
+
+block content
+  section#two.bg-alt
+    .container
+      .row
+        .col-lg-12.text-center
+          h2.mt-0.text-primary Flexbox
+          hr.primary
+    .container.wow.fadeInUp
+      .row
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-ios-grid-view-outline.wow.fadeIn(data-wow-delay='.1s')
+            h6.text-uppercase Easier
+            p.text-muted.m-b-0
+              | Flexbox provides
+              a(href='http://v4-alpha.getbootstrap.com/getting-started/flexbox') simpler, more flexible layout
+              |  options like vertical centering.
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-social-sass.wow.fadeInUp
+            h6.text-uppercase Sass-y
+            p.text-muted.m-b-0 Use SASS to easily customize your Bootstrap 4 projects.
+        .col-lg-4.col-md-4.text-center
+          .feature
+            i.icon-lg.ion-social-css3-outline.wow.fadeIn(data-wow-delay='.1s')
+            h6.text-uppercase It&apos;s Modern
+            p.text-muted.m-b-0
+              | Introduced in CSS3, flexbox won&apos;t work in older browsers like
+              a(href='http://caniuse.com/#feat=flexbox') IE9
+              | .

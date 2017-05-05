@@ -26,6 +26,10 @@ module.exports = function webpackMultiConfig(env) {
       filename: rev ? '[name]-[hash].js' : '[name].js', // Name of each output file on disk (not an absolute path).
       publicPath
     },
+    externals: {
+      jquery: 'jQuery',
+      wowjs: 'WOW'
+    },
     plugins: [],
     resolve: {
       extensions, // An array of extensions that should be used to resolve modules.
