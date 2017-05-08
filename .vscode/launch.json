@@ -7,12 +7,13 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceRoot}\\dist\\server.js",
+      "name": "Launch Server",
+      "program": "${workspaceRoot}/src/server.ts",
       "cwd": "${workspaceRoot}",
-      "sourceMaps": true,
+      "preLaunchTask": "server",
+      "smartStep": true,
       "outFiles": [
-        "dist\\**"
+        "${workspaceRoot}/dist/**/*.js"
       ]
     },
     {
@@ -29,7 +30,7 @@
       "name": "Gulp",
       "program": "${workspaceRoot}\\node_modules\\gulp\\bin\\gulp.js",
       "args": [
-
+        "server"
       ],
       "cwd": "${workspaceRoot}",
       "env": {}

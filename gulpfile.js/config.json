@@ -17,19 +17,18 @@
     "server": {
       "src": "",
       "dest": "./",
+      "config": "./tsconfig.server.json",
       "exclude": [
         "**/*.spec.ts",
         "js/**/*"
       ],
-      "compilerOptions": {
-        "noImplicitAny": false
-      },
       "extensions": ["ts"]
     },
 
     "javascripts": {
       "src": "js",
       "dest": "js",
+      "config": "tsconfig.client.json",
       "entries": {
         "app": ["./app.ts"]
       },

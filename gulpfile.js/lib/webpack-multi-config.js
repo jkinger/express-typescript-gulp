@@ -43,7 +43,7 @@ module.exports = function webpackMultiConfig(env) {
           use: [{
             loader: 'ts-loader',
             options: {
-              configFileName: 'tsconfig.webpack.json',
+              configFileName: config.tasks.javascripts.config,
             }
           }]
         },
