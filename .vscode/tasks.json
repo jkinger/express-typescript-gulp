@@ -9,6 +9,10 @@
             "taskName": "lint",
             "args": [],
             "problemMatcher": "$tslint5"
+        },
+        {
+            "taskName": "server",
+            "args": []
         }
     ]
 }

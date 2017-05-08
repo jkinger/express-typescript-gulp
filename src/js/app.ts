@@ -8,19 +8,21 @@ $('body').scrollspy({
 
 new WOW().init();
 
-$('a.page-scroll').bind('click', function (event) {
-  let $ele = $(this);
-  $('html, body').stop().animate({
-    scrollTop: ($($ele.attr('href')).offset().top - 60)
-  }, 1450, 'easeInOutExpo');
+$('a.page-scroll').bind('click', (event) => {
+  const $ele = $(this);
+  $('html, body').stop().animate(
+    {
+      scrollTop: ($($ele.attr('href')).offset().top - 60)
+    },
+    1450, 'easeInOutExpo');
   event.preventDefault();
 });
 
-$('#collapsingNavbar li a').click(function () {
+$('#collapsingNavbar li a').click(() => {
   /* always close responsive nav after click */
   $('.navbar-toggler:visible').click();
 });
 
-$('#galleryModal').on('show.bs.modal', function (e) {
+$('#galleryModal').on('show.bs.modal', (e) => {
   $('#galleryImage').attr('src', $(e.relatedTarget).data('src'));
 });

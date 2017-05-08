@@ -20,9 +20,15 @@ const serverTask = function serverTask() {
     paths.src.push(`!${pathExclude}`);
   }
 
+  const tsProject = tsc.createProject(config.tasks.server.config);
+
   return gulp.src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
-    .pipe(tsc(config.tasks.server.compilerOptions))
+    .pipe(tsProject())
+    .pipe(sourcemaps.write({
+      includeContent: false,
+      sourceRoot: path.resolve(config.root.src)
+    }))
     .pipe(gulp.dest(paths.dest));
 };
 

@@ -12,7 +12,7 @@ const ROOT = path.join(path.resolve(__dirname, '../..'));
 
 // Controllers
 import index from './controllers/index';
-import cards from './controllers/cards';
+import {cardViews, cardApi} from './controllers/cards';
 import flexbox from './controllers/flexbox';
 import examples from './controllers/examples';
 import tiers from './controllers/tiers';
@@ -48,11 +48,14 @@ app.use('/js', cacheControl, express.static(path.join(__dirname, 'js'), { maxAge
 
 // Add routes
 app.use('/', index);
-app.use('/cards', cards);
+app.use('/cards', cardViews);
 app.use('/flexbox', flexbox);
 app.use('/examples', examples);
 app.use('/tiers', tiers);
 app.use('/more', more);
+
+// Add api routes
+app.use('/api/cards', cardApi);
 
 // Error Handler.
 app.use(errorHandler());
