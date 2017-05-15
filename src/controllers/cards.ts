@@ -6,14 +6,13 @@ import Photo from '../models/photo';
 
 const photoService = new PhotoService();
 
-const cardViews: Router = Router();
-const cardApi: Router = Router();
+const cards: Router = Router();
 
 /**
  * GET /
  * Cards page.
  */
-cardViews.get('/', (reg: Request, res: Response) => {
+cards.get('/cards', (reg: Request, res: Response) => {
 
   photoService.getAsync().then((photos: Photo[]) => {
     res.render(
@@ -30,11 +29,11 @@ cardViews.get('/', (reg: Request, res: Response) => {
  * API GET /
  * Cards data.
  */
-cardApi.get('/', (reg: Request, res: Response) => {
+cards.get('/api/cards', (reg: Request, res: Response) => {
 
   photoService.getAsync().then((photos: Photo[]) => {
     res.json(_.take(photos, 12));
   });
 });
 
-export {cardViews, cardApi};
+export default cards;

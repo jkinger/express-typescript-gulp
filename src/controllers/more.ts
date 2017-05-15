@@ -7,7 +7,7 @@ const more: Router = Router();
  * GET /
  * More page.
  */
-more.get('/', (reg: Request, res: Response) => {
+more.get('/more', (reg: Request, res: Response) => {
   res.render(
     'more',
     {

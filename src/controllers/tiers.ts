@@ -7,7 +7,7 @@ const tiers: Router = Router();
  * GET /
  * Tiers page.
  */
-tiers.get('/', (reg: Request, res: Response) => {
+tiers.get('/tiers', (reg: Request, res: Response) => {
   res.render(
     'tiers',
     {

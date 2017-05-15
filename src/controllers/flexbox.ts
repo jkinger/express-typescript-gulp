@@ -7,7 +7,7 @@ const flexbox: Router = Router();
  * GET /
  * Flexbox page.
  */
-flexbox.get('/', (reg: Request, res: Response) => {
+flexbox.get('/flexbox', (reg: Request, res: Response) => {
   res.render(
     'flexbox',
     {

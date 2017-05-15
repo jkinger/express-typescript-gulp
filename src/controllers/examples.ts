@@ -7,7 +7,7 @@ const examples: Router = Router();
  * GET /
  * Examples page.
  */
-examples.get('/', (reg: Request, res: Response) => {
+examples.get('/examples', (reg: Request, res: Response) => {
   res.render(
     'examples',
     {
